@@ -11,41 +11,7 @@ using namespace std;
 void team::print() {
 	cout << "Number of Games: " << games_played << " Number of Players: " << players << "\n";
 	for (int i = 0; i < players; i++) {
-		string n1 = p[i].get_name();
-		int n2 = p[i].get_num();
-		cout << n1 << " [" << n2 << "]\n";
-		cout << left
-			<< setw(4) << "Game" << "  "
-			<< setw(12) << "3-Point FGs" << "  "
-			<< setw(12) << "2-Point FGs" << "  "
-			<< setw(12) << "Free Throws" << "  "
-			<< setw(5) << "Total" << endl;
-		cout << "----  ------------  ------------  ------------  -----" << endl;
-		for (int g=0; g < games_played; g++) {
-			p[i].set_num_games_played(g);
-			int a3 = p[i].get_3att();
-			int m3 = p[i].get_3made();
-			int a2 = p[i].get_2att();
-			int m2 = p[i].get_2made();
-			int mft = p[i].get_ftmade();
-			int aft = p[i].get_ftatt();
-			
-			cout << right;
-			
-			string str_game = (to_string(g));
-			string str_3pt = (to_string(m3) + "/" + to_string(a3) + " (" + to_string(p[i].get_calc_perc3(a3, m3)) + "%)");
-			string str_2pt = (to_string(m2) + "/" + to_string(a2) + " (" + to_string(p[i].get_calc_perc2(a2, m2)) + "%)");
-			string str_ft = (to_string(mft) + "/" + to_string(aft) + " (" + to_string(p[i].get_calc_percft(aft, mft)) + "%)");
-			string str_total = (to_string((m3 * 3) + (m2 * 2) + (mft)));
-			cout << fixed << setprecision(2);
-			cout << setw(4) << str_game << "  ";
-			cout << setw(12) << str_3pt<< "  ";
-			cout << setw(12) << str_2pt<< "  ";
-			cout << setw(12) << str_ft<< "  ";
-			cout << setw(5) << str_total;
-			cout << "\n";
-				
-		}
+		p[i].print();
 	}
 	cout << "\n";
 }
@@ -132,41 +98,14 @@ void team::displayPlayer() {
 	for (int i = 0; i < players; i++) {
 		int q = p[i].get_num();
 		string q2 = p[i].get_name();
-		if (q == r) {
-			found = true;
-			if (found) {
-				cout << q2 << " [" << q << "]\n";
-				cout << "Game   3-Point FGs   2-Point FGs   Free Throws   Total\n";
-				cout << "----   -----------   -----------   -----------   -----\n";
-				for (int g = 0; g < games_played; g++) {
-					p[i].set_num_games_played(g);
-					int a3 = p[i].get_3att();
-					int m3 = p[i].get_3made();
-					int a2 = p[i].get_2att();
-					int m2 = p[i].get_2made();
-					int mft = p[i].get_ftmade();
-					int aft = p[i].get_ftatt();
-
-					
-					cout << right;
-					int w = 6;
-					cout << " " << g << setw(w) << m3 << "/" << a3 << " (" << p[i].get_calc_perc3(a3, m3) << "%)" << setw(w)
-						<< m2 << "/" << a2 << " (" << p[i].get_calc_perc2(a2, m2) << "%)" << setw(w)
-						<< mft << "/" << aft << " (" << p[i].get_calc_percft(aft, mft) << "%)" << setw(w)
-						<< ((m3 * 3) + (m2 * 2) + (mft)) << "\n";
-
-				}
-			}
-			
-			}
+		if (q == r)
+			p[i].print();
 		
-			
-		}
-	if (found == false)
-		cout << "Player Not Found\n";
-	
 
-	}
+
+	}if (found == false)
+		cout << "Player Not Found\n";
+}
 
 void team::read() {
 	ifstream f;
