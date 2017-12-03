@@ -1,2 +1,2 @@
 # BBallTeamProj
-A basketball stat keeping program written in C++
+A basketball stat keeping program written in C++.
