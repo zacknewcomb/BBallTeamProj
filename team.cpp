@@ -97,9 +97,10 @@ void team::displayPlayer() {
 	cin >> r;
 	for (int i = 0; i < players; i++) {
 		int q = p[i].get_num();
-		string q2 = p[i].get_name();
-		if (q == r)
+		if (q == r){
+			found = true
 			p[i].print();
+			i = players;}
 		
 
 
