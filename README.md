@@ -9,3 +9,8 @@ Each .cpp and .h file are needed for the program to compline correctly. This app
   - This file is what is read into the program for the beginning players and stats. 
   - Looks like this:
   
+  [![Screenshot](https://s33.postimg.org/7b779rdb3/Screenshot_55.png)](https://postimg.org/image/f3xv1qja3/)
+  
+-The file is formatted as:
+ - First line: #ofPlayers #ofGames
+ - Following Lines:
