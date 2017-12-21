@@ -33,3 +33,5 @@ Each .cpp and .h file are needed for the program to compline correctly. This app
     - Removes player from team
    #### Sort by Name and Jersey
     - Sorts players on team by increasing jersey number, or alphabetically
+     #### Generally
+    - This program is designed to be a small application for recording players scoring in a basketball game. I used this project to learn and practice more on object oriented programming in C++.
